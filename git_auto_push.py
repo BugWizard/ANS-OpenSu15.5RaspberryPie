@@ -11,7 +11,7 @@ def automatic_commit(repo_path, commit_message, author_name, author_email):
 
     if changes:
         repo.index.commit(commit_message, author=author, committer=committer)
-        origin = repo.remote(name='origin')
+        origin = repo.remote(name='main')
         origin.push("HEAD:main")
         print("Changes committed and pushed successfully.")
     else:

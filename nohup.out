@@ -904,3 +904,19 @@ After doing this, you may fix the identity used for this commit with:
  create mode 100644 venv/share/python-wheels/wheel-0.34.2-py2.py3-none-any.whl
 To github.com:BugWizard/ANS-OpenSu15.5RaspberryPie.git
    2a6fa24..ffa7b8f  main -> main
+[main fd1800b] auto commit
+ Committer: Parrot Live user <user@localhost.localdomain>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 894 insertions(+)
+To github.com:BugWizard/ANS-OpenSu15.5RaspberryPie.git
+   ffa7b8f..fd1800b  main -> main
