@@ -1,0 +1,5 @@
+   ---
+   - hosts: openSUSE_LEAP
+     become: yes
+     roles:
+     - role: 
