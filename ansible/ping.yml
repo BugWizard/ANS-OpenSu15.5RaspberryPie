@@ -1,4 +1,4 @@
-   ---
+---
 - hosts: OpenSUSE
   tasks:
     - name: Ping
