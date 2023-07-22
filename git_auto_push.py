@@ -30,7 +30,7 @@ def automatic_commit(repo_path, commit_message, author_name, author_email, skip_
 def commit_every_30_minutes(repo_path, commit_message, author_name, author_email):
     while True:
         automatic_commit(repo_path, commit_message, author_name, author_email)
-        time.sleep(1900)  # Sleep for 30 minutes (1800 seconds)
+        time.sleep(1800)  # Sleep for 30 minutes (1800 seconds)
 
 # Example usage
 repo_path = "/home/user/Documents/Ansible_Leap_Project/ANS-OpenSu15.5RaspberryPie"
