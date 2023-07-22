@@ -1,18 +1,28 @@
+import os
 import time
 from git import Repo, Actor
 
-def automatic_commit(repo_path, commit_message, author_name, author_email):
+def automatic_commit(repo_path, commit_message, author_name, author_email, skip_files=['git_auto_push.py']):
     repo = Repo(repo_path)
     author = Actor(author_name, author_email)
     committer = Actor(author_name, author_email)
 
-    repo.git.add(all=True)
+    # Get a list of all file paths in the repo
+    all_files = [os.path.join(root, file) for root, _, files in os.walk(repo_path) for file in files]
+
+    # Filter out the files in the skip_files list
+    files_to_add = [file for file in all_files if os.path.basename(file) not in skip_files]
+
+    # Add the remaining files to the repo
+    for file in files_to_add:
+        repo.git.add(file)
+
     changes = repo.index.diff(None)
 
     if changes:
         repo.index.commit(commit_message, author=author, committer=committer)
-        origin = repo.remote(name='main')
-        origin.push("HEAD:main")
+        origin = repo.remote(name='origin')  # Corrected remote name
+        origin.push()
         print("Changes committed and pushed successfully.")
     else:
         print("No changes to commit.")
