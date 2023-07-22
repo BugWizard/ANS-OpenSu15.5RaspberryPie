@@ -1,5 +1,0 @@
-   ---
-   - hosts: openSUSE_LEAP_15.5
-     become: yes
-     roles:
-     - role: 
