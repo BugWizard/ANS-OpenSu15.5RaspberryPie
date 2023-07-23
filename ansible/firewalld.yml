@@ -1,0 +1,10 @@
+- name: Install firewalld
+  zypper:
+    name: firewalld
+    state: present
+
+- name: Enable firewalld
+  service:
+    name: firewalld
+    state: started
+    enabled: yes
