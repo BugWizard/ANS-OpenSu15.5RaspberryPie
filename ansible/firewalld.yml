@@ -1,10 +1,13 @@
-- name: Install firewalld
-  zypper:
-    name: firewalld
-    state: present
+---
+- hosts: 192.168.1.15
+  tasks:
+    - name: Install firewalld
+      zypper:
+        name: firewalld
+        state: present
 
-- name: Enable firewalld
-  service:
-    name: firewalld
-    state: started
-    enabled: yes
+    - name: Enable firewalld
+      service:
+        name: firewalld
+        state: started
+        enabled: yes
