@@ -7,23 +7,26 @@ def automatic_commit(repo_path, commit_message, author_name, author_email, skip_
     author = Actor(author_name, author_email)
     committer = Actor(author_name, author_email)
 
-    # Get a list of all file paths in the repo
-    all_files = [os.path.join(root, file) for root, _, files in os.walk(repo_path) for file in files]
+    if repo.is_dirty():
+        # Get a list of all file paths in the repo
+        all_files = [os.path.join(root, file) for root, _, files in os.walk(repo_path) for file in files]
 
-    # Filter out the files in the skip_files list
-    files_to_add = [file for file in all_files if os.path.basename(file) not in skip_files]
+        # Filter out the files in the skip_files list
+        files_to_add = [file for file in all_files if os.path.basename(file) not in skip_files]
 
-    # Add the remaining files to the repo
-    for file in files_to_add:
-        repo.git.add(file)
+        # Add the remaining files to the repo
+        for file in files_to_add:
+            repo.git.add(file)
 
-    changes = repo.index.diff(None)
+        changes = repo.index.diff(None)
 
-    if changes:
-        repo.index.commit(commit_message, author=author, committer=committer)
-        origin = repo.remote(name='origin')  # Corrected remote name
-        origin.push()
-        print("Changes committed and pushed successfully.")
+        if changes:
+            repo.index.commit(commit_message, author=author, committer=committer)
+            origin = repo.remote(name='origin')  # Corrected remote name
+            origin.push()
+            print("Changes committed and pushed successfully.")
+        else:
+            print("No changes to commit.")
     else:
         print("No changes to commit.")
 

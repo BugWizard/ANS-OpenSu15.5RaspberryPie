@@ -1,0 +1,7 @@
+---
+- hosts: 192.168.1.15
+  tasks:
+  verifier:
+  name: inspec
+  inspec_tests:
+    - tests/ssh_profile
