@@ -1,10 +1,8 @@
-# controls/ssh.rb
-
-control 'ssh-1.0' do
+control 'os-01' do
     impact 1.0
-    title 'Check SSH'
-    desc 'Check if SSH port is open'
-    describe command('nc -zv 192.168.1.15 22') do
-      its('stdout') { should match /succeeded/ }
+    title 'Check if system packages are up to date'
+    describe command('zypper lu') do
+      its('stdout') { should match (/No updates found./) }
     end
   end
+  
