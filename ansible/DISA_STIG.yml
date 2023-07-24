@@ -1,0 +1,44 @@
+---
+- hosts: 192.168.1.15
+  vars:
+    stig_zip_file_path: /path/to/U_SLES_15_V1R10_STIG.zip # update this to the actual path of STIG .zip file on the controlling machine
+    remote_dest_path: /tmp # path on the remote machine where the STIG file will be copied to
+    remote_user: root # update this to the user on the remote machine
+
+  tasks:
+    - name: Ensure necessary packages are installed
+      zypper:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - ansible
+        - openscap-utils
+      become: yes
+
+    - name: Copy STIG zip file to remote machine
+      copy:
+        src: "{{ stig_zip_file_path }}"
+        dest: "{{ remote_dest_path }}"
+        remote_src: no
+      become_user: "{{ remote_user }}"
+
+    - name: Unarchive STIG .zip file on remote machine
+      unarchive:
+        src: "{{ remote_dest_path }}/U_SLES_15_V1R10_STIG.zip"
+        dest: "{{ remote_dest_path }}"
+        remote_src: yes
+      become_user: "{{ remote_user }}"
+ 
+    - name: Convert SCAP data stream and generate Ansible playbook
+      command:
+        cmd: |
+          oscap ds sds-compose {{ remote_dest_path }}/U_SLES_15_STIG_SCAP_1-2_Benchmark.xml ds.xml
+          oscap xccdf generate fix --template urn:xccdf:fix:script:ansible --output stig-playbook.yml ds.xml
+      args:
+        chdir: "{{ remote_dest_path }}"
+      become_user: "{{ remote_user }}"
+    
+    - name: Include and execute the generated STIG playbook on remote machine
+      include: "{{ remote_dest_path }}/stig-playbook.yml"
+      become_user: "{{ remote_user }}"
+...
