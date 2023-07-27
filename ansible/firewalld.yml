@@ -11,4 +11,27 @@
         name: firewalld
         state: started
         enabled: yes
+  
+  tasks:
+  - name: Ensure host firewalld service is enabled and running
+    service:
+        name: firewalld
+        state: started
+        enabled: yes
+
+  - name: Ensure SSH Protocol 2 is set
+    lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?Protocol'
+        line: 'Protocol 2'
         
+  - name: Remove telnet-client
+    zypper:
+        name: telnet
+        state: absent
+
+  - name: Set SELinux to enforcing mode
+    selinux:
+        policy: targeted
+        state: enforcing
+  ...
