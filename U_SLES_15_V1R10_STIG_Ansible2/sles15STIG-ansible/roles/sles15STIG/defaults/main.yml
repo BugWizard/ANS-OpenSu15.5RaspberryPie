@@ -1,0 +1,400 @@
+# R-234803 SLES-15-010020
+sles15STIG_stigrule_234803_Manage: True
+sles15STIG_stigrule_234803__etc_motd_Dest: /etc/motd
+sles15STIG_stigrule_234803__etc_motd_Content: 'You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.
+
+By using this IS (which includes any device attached to this IS), you consent to the following conditions:
+
+-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.
+
+-At any time, the USG may inspect and seize data stored on this IS.
+
+-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.
+
+-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.
+
+-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.
+
+'
+# R-234804 SLES-15-010030
+sles15STIG_stigrule_234804_Manage: True
+sles15STIG_stigrule_234804_vsftpd_State: removed
+# R-234805 SLES-15-010040
+sles15STIG_stigrule_234805_Manage: True
+sles15STIG_stigrule_234805__etc_issue_Dest: /etc/issue
+sles15STIG_stigrule_234805__etc_issue_Content: 'You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.
+
+By using this IS (which includes any device attached to this IS), you consent to the following conditions:
+
+-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.
+
+-At any time, the USG may inspect and seize data stored on this IS.
+
+-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.
+
+-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.
+
+-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.
+
+'
+# R-234811 SLES-15-010110
+sles15STIG_stigrule_234811_Manage: True
+sles15STIG_stigrule_234811_kbd_State: installed
+# R-234813 SLES-15-010130
+sles15STIG_stigrule_234813_Manage: True
+sles15STIG_stigrule_234813__etc_profile_d_autologout_sh_Dest: /etc/profile.d/autologout.sh
+sles15STIG_stigrule_234813__etc_profile_d_autologout_sh_Content: 'TMOUT=900
+
+readonly TMOUT
+
+export TMOUT'
+# R-234815 SLES-15-010150
+sles15STIG_stigrule_234815_Manage: True
+sles15STIG_stigrule_234815_LogLevel_Line: LogLevel VERBOSE
+# R-234816 SLES-15-010160
+sles15STIG_stigrule_234816_Manage: True
+sles15STIG_stigrule_234816_Ciphers_Line: Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+# R-234818 SLES-15-010180
+sles15STIG_stigrule_234818_Manage: True
+sles15STIG_stigrule_234818_telnet_server_State: removed
+# R-234821 SLES-15-010220
+sles15STIG_stigrule_234821_Manage: True
+sles15STIG_stigrule_234821_firewalld_active_Enabled: yes
+sles15STIG_stigrule_234821_firewalld_start_State: started
+# R-234823 SLES-15-010240
+sles15STIG_stigrule_234823_Manage: True
+sles15STIG_stigrule_234823_autofs_disable_Enabled: no
+sles15STIG_stigrule_234823_autofs_stop_State: stopped
+# R-234825 SLES-15-010260
+sles15STIG_stigrule_234825_Manage: True
+sles15STIG_stigrule_234825__etc_login_defs_Line: 'ENCRYPT_METHOD SHA512'
+# R-234826 SLES-15-010270
+sles15STIG_stigrule_234826_Manage: True
+sles15STIG_stigrule_234826_MACs_Line: MACs hmac-sha2-512,hmac-sha2-256
+# R-234827 SLES-15-010280
+sles15STIG_stigrule_234827_Manage: True
+sles15STIG_stigrule_234827_ClientAliveInterval_Line: ClientAliveInterval 600
+# R-234829 SLES-15-010310
+sles15STIG_stigrule_234829_Manage: True
+sles15STIG_stigrule_234829_net_ipv4_tcp_syncookies_Value: 1
+sles15STIG_stigrule_234829__etc_sysctl_d_99_stig_conf_Line: 'net.ipv4.tcp_syncookies = 1'
+# R-234830 SLES-15-010320
+sles15STIG_stigrule_234830_Manage: True
+sles15STIG_stigrule_234830_ClientAliveCountMax_Line: ClientAliveCountMax 0
+# R-234848 SLES-15-010390
+sles15STIG_stigrule_234848_Manage: True
+sles15STIG_stigrule_234848_pam_apparmor_State: installed
+sles15STIG_stigrule_234848_apparmor_enable_Enabled: yes
+sles15STIG_stigrule_234848_apparmor_start_State: started
+# R-234852 SLES-15-010430
+sles15STIG_stigrule_234852_Manage: True
+sles15STIG_stigrule_234852__etc_zypp_zypp_conf_Value: '1'
+# R-234854 SLES-15-010460
+sles15STIG_stigrule_234854_Manage: False
+sles15STIG_stigrule_234854_pam_pkcs11_State: installed
+sles15STIG_stigrule_234854_mozilla_nss_State: installed
+sles15STIG_stigrule_234854_mozilla_nss_tools_State: installed
+sles15STIG_stigrule_234854_pcsc_ccid_State: installed
+sles15STIG_stigrule_234854_pcsc_lite_State: installed
+sles15STIG_stigrule_234854_pcsc_tools_State: installed
+sles15STIG_stigrule_234854_opensc_State: installed
+sles15STIG_stigrule_234854_coolkey_State: installed
+# R-234856 SLES-15-010480
+sles15STIG_stigrule_234856_Manage: True
+sles15STIG_stigrule_234856__etc_modprobe_d_50_blacklist_conf_Line: 'blacklist usb-storage'
+# R-234860 SLES-15-010530
+sles15STIG_stigrule_234860_Manage: True
+sles15STIG_stigrule_234860_ensure_openssh_is_installed_State: installed
+sles15STIG_stigrule_234860_sshd_enable_Enabled: yes
+# R-234861 SLES-15-010540
+sles15STIG_stigrule_234861_Manage: True
+sles15STIG_stigrule_234861_kernel_kptr_restrict_Value: 1
+sles15STIG_stigrule_234861__etc_sysctl_d_99_stig_conf_Line: 'kernel.kptr_restrict = 1'
+# R-234862 SLES-15-010550
+sles15STIG_stigrule_234862_Manage: True
+sles15STIG_stigrule_234862_kernel_randomize_va_space_Value: 2
+sles15STIG_stigrule_234862__etc_sysctl_d_99_stig_conf_Line: 'kernel.randomize_va_space = 2'
+# R-234863 SLES-15-010560
+sles15STIG_stigrule_234863_Manage: True
+sles15STIG_stigrule_234863__etc_zypp_zypp_conf_Value: 'true'
+# R-234868 SLES-15-020020
+sles15STIG_stigrule_234868_Manage: True
+sles15STIG_stigrule_234868__etc_security_limits_conf_Line: '* hard maxlogins 10'
+# R-234870 SLES-15-020040
+sles15STIG_stigrule_234870_Manage: True
+sles15STIG_stigrule_234870_PermitRootLogin_Line: PermitRootLogin no
+# R-234880 SLES-15-020110
+sles15STIG_stigrule_234880_Manage: True
+sles15STIG_stigrule_234880__etc_login_defs_Line: 'CREATE_HOME yes'
+# R-234881 SLES-15-020120
+sles15STIG_stigrule_234881_Manage: True
+sles15STIG_stigrule_234881_PrintLastLog_Line: PrintLastLog yes
+# R-234888 SLES-15-020190
+sles15STIG_stigrule_234888_Manage: True
+sles15STIG_stigrule_234888__etc_login_defs_Line: 'SHA_CRYPT_MIN_ROUNDS 5000'
+# R-234889 SLES-15-020200
+sles15STIG_stigrule_234889_Manage: True
+sles15STIG_stigrule_234889__etc_login_defs_Line: 'PASS_MIN_DAYS 1'
+# R-234891 SLES-15-020220
+sles15STIG_stigrule_234891_Manage: True
+sles15STIG_stigrule_234891__etc_login_defs_Line: 'PASS_MAX_DAYS 60'
+# R-234899 SLES-15-030000
+sles15STIG_stigrule_234899_Manage: True
+sles15STIG_stigrule_234899__etc_audit_rules_d_audit_rules__etc_passwd_Line: '-w /etc/passwd -p wa -k account_mod'
+# R-234900 SLES-15-030010
+sles15STIG_stigrule_234900_Manage: True
+sles15STIG_stigrule_234900__etc_audit_rules_d_audit_rules__etc_group_Line: '-w /etc/group -p wa -k account_mod'
+# R-234901 SLES-15-030020
+sles15STIG_stigrule_234901_Manage: True
+sles15STIG_stigrule_234901__etc_audit_rules_d_audit_rules__etc_shadow_Line: '-w /etc/shadow -p wa -k account_mod'
+# R-234902 SLES-15-030030
+sles15STIG_stigrule_234902_Manage: True
+sles15STIG_stigrule_234902__etc_audit_rules_d_audit_rules__etc_security_opasswd_Line: '-w /etc/security/opasswd -p wa -k account_mod'
+# R-234903 SLES-15-030040
+sles15STIG_stigrule_234903_Manage: True
+sles15STIG_stigrule_234903__etc_audit_rules_d_audit_rules__etc_gshadow_Line: '-w /etc/gshadow -p wa -k account_mod'
+# R-234904 SLES-15-030050
+sles15STIG_stigrule_234904_Manage: True
+sles15STIG_stigrule_234904_auditd_enable_Enabled: yes
+sles15STIG_stigrule_234904_auditd_start_State: started
+# R-234905 SLES-15-030060
+sles15STIG_stigrule_234905_Manage: True
+sles15STIG_stigrule_234905__etc_audit_rules_d_audit_rules_ssh_keysign_Line: '-a always,exit -F path=/usr/lib/ssh/ssh-keysign -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-ssh-keysign'
+# R-234906 SLES-15-030070
+sles15STIG_stigrule_234906_Manage: True
+sles15STIG_stigrule_234906__etc_audit_rules_d_audit_rules_passwd_Line: '-a always,exit -F path=/usr/bin/passwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd'
+# R-234907 SLES-15-030080
+sles15STIG_stigrule_234907_Manage: True
+sles15STIG_stigrule_234907__etc_audit_rules_d_audit_rules_gpasswd_Line: '-a always,exit -F path=/usr/bin/gpasswd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-gpasswd'
+# R-234908 SLES-15-030090
+sles15STIG_stigrule_234908_Manage: True
+sles15STIG_stigrule_234908__etc_audit_rules_d_audit_rules_newgrp_Line: '-a always,exit -F path=/usr/bin/newgrp -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-newgrp'
+# R-234909 SLES-15-030100
+sles15STIG_stigrule_234909_Manage: True
+sles15STIG_stigrule_234909__etc_audit_rules_d_audit_rules_chsh_Line: '-a always,exit -F path=/usr/bin/chsh -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-chsh'
+# R-234910 SLES-15-030110
+sles15STIG_stigrule_234910_Manage: True
+sles15STIG_stigrule_234910__etc_audit_rules_d_audit_rules_unix_chkpwd_Line: '-a always,exit -F path=/sbin/unix_chkpwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-unix-chkpwd'
+sles15STIG_stigrule_234910__etc_audit_rules_d_audit_rules_unix2_chkpwd_Line: '-a always,exit -F path=/sbin/unix2_chkpwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-unix2-chkpwd'
+# R-234911 SLES-15-030120
+sles15STIG_stigrule_234911_Manage: True
+sles15STIG_stigrule_234911__etc_audit_rules_d_audit_rules_chage_Line: '-a always,exit -F path=/usr/bin/chage -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-chage'
+# R-234912 SLES-15-030130
+sles15STIG_stigrule_234912_Manage: True
+sles15STIG_stigrule_234912__etc_audit_rules_d_audit_rules_crontab_Line: '-a always,exit -F path=/usr/bin/crontab -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-crontab'
+# R-234913 SLES-15-030140
+sles15STIG_stigrule_234913_Manage: True
+sles15STIG_stigrule_234913__etc_audit_rules_d_audit_rules_sudoers_Line: '-w /etc/sudoers -p wa -k privileged-actions'
+sles15STIG_stigrule_234913__etc_audit_rules_d_audit_rules_sudoers_d_Line: '-w /etc/sudoers.d -p wa -k privileged-actions'
+# R-234914 SLES-15-030150
+sles15STIG_stigrule_234914_Manage: True
+sles15STIG_stigrule_234914__etc_audit_rules_d_audit_rules_b32_EPERM_creat_Line: '-a always,exit -F arch=b32 -S creat,open,openat,open_by_handle_at,truncate,ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k perm_access'
+sles15STIG_stigrule_234914__etc_audit_rules_d_audit_rules_b64_EPERM_creat_Line: '-a always,exit -F arch=b64 -S creat,open,openat,open_by_handle_at,truncate,ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k perm_access'
+sles15STIG_stigrule_234914__etc_audit_rules_d_audit_rules_b32_EACCES_creat_Line: '-a always,exit -F arch=b32 -S creat,open,openat,open_by_handle_at,truncate,ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k perm_access'
+sles15STIG_stigrule_234914__etc_audit_rules_d_audit_rules_b64_EACCES_creat_Line: '-a always,exit -F arch=b64 -S creat,open,openat,open_by_handle_at,truncate,ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k perm_access'
+# R-234918 SLES-15-030190
+sles15STIG_stigrule_234918_Manage: True
+sles15STIG_stigrule_234918__etc_audit_rules_d_audit_rules_b32_setxattr_Line: '-a always,exit -F arch=b32 -S setxattr,fsetxattr,lsetxattr,removexattr,fremovexattr,lremovexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod'
+sles15STIG_stigrule_234918__etc_audit_rules_d_audit_rules_b64_setxattr_Line: '-a always,exit -F arch=b64 -S setxattr,fsetxattr,lsetxattr,removexattr,fremovexattr,lremovexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod'
+# R-234924 SLES-15-030250
+sles15STIG_stigrule_234924_Manage: True
+sles15STIG_stigrule_234924__etc_audit_rules_d_audit_rules_b32_chown_Line: '-a always,exit -F arch=b32 -S chown,fchown,fchownat,lchown -F auid>=1000 -F auid!=4294967295 -k perm_mod'
+sles15STIG_stigrule_234924__etc_audit_rules_d_audit_rules_b64_chown_Line: '-a always,exit -F arch=b64 -S chown,fchown,fchownat,lchown -F auid>=1000 -F auid!=4294967295 -k perm_mod'
+# R-234928 SLES-15-030290
+sles15STIG_stigrule_234928_Manage: True
+sles15STIG_stigrule_234928__etc_audit_rules_d_audit_rules_b32_chmod_Line: '-a always,exit -F arch=b32 -S chmod,fchmod,fchmodat -F auid>=1000 -F auid!=4294967295 -k perm_mod'
+sles15STIG_stigrule_234928__etc_audit_rules_d_audit_rules_b64_chmod_Line: '-a always,exit -F arch=b64 -S chmod,fchmod,fchmodat -F auid>=1000 -F auid!=4294967295 -k perm_mod'
+# R-234932 SLES-15-030330
+sles15STIG_stigrule_234932_Manage: True
+sles15STIG_stigrule_234932__etc_audit_rules_d_audit_rules_sudoedit_Line: '-a always,exit -F path=/usr/bin/sudoedit -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-sudoedit'
+# R-234933 SLES-15-030340
+sles15STIG_stigrule_234933_Manage: True
+sles15STIG_stigrule_234933__etc_audit_rules_d_audit_rules_chfn_Line: '-a always,exit -F path=/usr/bin/chfn -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-chfn'
+# R-234934 SLES-15-030350
+sles15STIG_stigrule_234934_Manage: True
+sles15STIG_stigrule_234934__etc_audit_rules_d_audit_rules_b32_mount_Line: '-a always,exit -F arch=b32 -S mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount'
+sles15STIG_stigrule_234934__etc_audit_rules_d_audit_rules_b64_mount_Line: '-a always,exit -F arch=b64 -S mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount'
+# R-234935 SLES-15-030360
+sles15STIG_stigrule_234935_Manage: True
+sles15STIG_stigrule_234935__etc_audit_rules_d_audit_rules_b32_umount_Line: '-a always,exit -F arch=b32 -S umount -F auid>=1000 -F auid!=4294967295 -k privileged-umount'
+sles15STIG_stigrule_234935__etc_audit_rules_d_audit_rules_b32_umount2_Line: '-a always,exit -F arch=b32 -S umount2 -F auid>=1000 -F auid!=4294967295 -k privileged-umount'
+sles15STIG_stigrule_234935__etc_audit_rules_d_audit_rules_b64_umount2_Line: '-a always,exit -F arch=b64 -S umount2 -F auid>=1000 -F auid!=4294967295 -k privileged-umount'
+# R-234936 SLES-15-030370
+sles15STIG_stigrule_234936_Manage: True
+sles15STIG_stigrule_234936__etc_audit_rules_d_audit_rules_ssh_agent_Line: '-a always,exit -F path=/usr/bin/ssh-agent -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-ssh-agent'
+# R-234937 SLES-15-030380
+sles15STIG_stigrule_234937_Manage: True
+sles15STIG_stigrule_234937__etc_audit_rules_d_audit_rules_insmod_Line: '-w /sbin/insmod -p x -k modules'
+# R-234938 SLES-15-030390
+sles15STIG_stigrule_234938_Manage: True
+sles15STIG_stigrule_234938__etc_audit_rules_d_audit_rules_rmmod_Line: '-w /sbin/rmmod -p x -k modules'
+# R-234939 SLES-15-030400
+sles15STIG_stigrule_234939_Manage: True
+sles15STIG_stigrule_234939__etc_audit_rules_d_audit_rules_modprobe_Line: '-w /sbin/modprobe -p x -k modules'
+# R-234940 SLES-15-030410
+sles15STIG_stigrule_234940_Manage: True
+sles15STIG_stigrule_234940__etc_audit_rules_d_audit_rules_kmod_Line: '-w /usr/bin/kmod -p x -k modules'
+# R-234941 SLES-15-030420
+sles15STIG_stigrule_234941_Manage: True
+sles15STIG_stigrule_234941__etc_audit_rules_d_audit_rules_chmod_Line: '-a always,exit -F path=/usr/bin/chmod -F perm=x -F auid>=1000 -F auid!=4294967295 -k prim_mod'
+# R-234942 SLES-15-030430
+sles15STIG_stigrule_234942_Manage: True
+sles15STIG_stigrule_234942__etc_audit_rules_d_audit_rules_setfacl_Line: '-a always,exit -F path=/usr/bin/setfacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k prim_mod'
+# R-234943 SLES-15-030440
+sles15STIG_stigrule_234943_Manage: True
+sles15STIG_stigrule_234943__etc_audit_rules_d_audit_rules_chacl_Line: '-a always,exit -F path=/usr/bin/chacl -F perm=x -F auid>=1000 -F auid!=4294967295 -k prim_mod'
+# R-234944 SLES-15-030450
+sles15STIG_stigrule_234944_Manage: True
+sles15STIG_stigrule_234944__etc_audit_rules_d_audit_rules_chcon_Line: '-a always,exit -F path=/usr/bin/chcon -F perm=x -F auid>=1000 -F auid!=4294967295 -k prim_mod'
+# R-234945 SLES-15-030460
+sles15STIG_stigrule_234945_Manage: True
+sles15STIG_stigrule_234945__etc_audit_rules_d_audit_rules_rm_Line: '-a always,exit -F path=/usr/bin/rm -F perm=x -F auid>=1000 -F auid!=4294967295 -k prim_mod'
+# R-234946 SLES-15-030470
+sles15STIG_stigrule_234946_Manage: True
+sles15STIG_stigrule_234946__etc_audit_rules_d_audit_rules_tallylog_Line: '-w /var/log/tallylog -p wa -k logins'
+# R-234947 SLES-15-030480
+sles15STIG_stigrule_234947_Manage: True
+sles15STIG_stigrule_234947__etc_audit_rules_d_audit_rules_lastlog_Line: '-w /var/log/lastlog -p wa -k logins'
+# R-234948 SLES-15-030490
+sles15STIG_stigrule_234948_Manage: True
+sles15STIG_stigrule_234948__etc_audit_rules_d_audit_rules_passmass_Line: '-a always,exit -F path=/usr/bin/passmass -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passmass'
+# R-234949 SLES-15-030500
+sles15STIG_stigrule_234949_Manage: True
+sles15STIG_stigrule_234949__etc_audit_rules_d_audit_rules_usermod_Line: '-a always,exit -F path=/usr/sbin/usermod -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-usermod'
+# R-234950 SLES-15-030510
+sles15STIG_stigrule_234950_Manage: True
+sles15STIG_stigrule_234950__etc_audit_rules_d_audit_rules_pam_timestamp_check_Line: '-a always,exit -F path=/sbin/pam_timestamp_check -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-pam_timestamp_check'
+# R-234951 SLES-15-030520
+sles15STIG_stigrule_234951_Manage: True
+sles15STIG_stigrule_234951__etc_audit_rules_d_audit_rules_b32_delete_module_Line: '-a always,exit -F arch=b32 -S delete_module -F auid>=1000 -F auid!=4294967295 -k unload_module'
+sles15STIG_stigrule_234951__etc_audit_rules_d_audit_rules_b64_delete_module_Line: '-a always,exit -F arch=b64 -S delete_module -F auid>=1000 -F auid!=4294967295 -k unload_module'
+# R-234952 SLES-15-030530
+sles15STIG_stigrule_234952_Manage: True
+sles15STIG_stigrule_234952__etc_audit_rules_d_audit_rules_b32_init_module_Line: '-a always,exit -F arch=b32 -S init_module,finit_module -F auid>=1000 -F auid!=4294967295 -k moduleload'
+sles15STIG_stigrule_234952__etc_audit_rules_d_audit_rules_b64_init_module_Line: '-a always,exit -F arch=b64 -S init_module,finit_module -F auid>=1000 -F auid!=4294967295 -k moduleload'
+# R-234954 SLES-15-030550
+sles15STIG_stigrule_234954_Manage: True
+sles15STIG_stigrule_234954__etc_audit_rules_d_audit_rules_su_Line: '-a always,exit -F path=/usr/bin/su -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change'
+# R-234955 SLES-15-030560
+sles15STIG_stigrule_234955_Manage: True
+sles15STIG_stigrule_234955__etc_audit_rules_d_audit_rules_sudo_Line: '-a always,exit -F path=/usr/bin/sudo -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-sudo'
+# R-234956 SLES-15-030570
+sles15STIG_stigrule_234956_Manage: True
+sles15STIG_stigrule_234956__etc_audit_auditd_conf_Line: 'action_mail_acct = root'
+# R-234958 SLES-15-030590
+sles15STIG_stigrule_234958_Manage: True
+sles15STIG_stigrule_234958__etc_audit_auditd_conf_Line: 'disk_full_action = HALT'
+# R-234963 SLES-15-030640
+sles15STIG_stigrule_234963_Manage: True
+sles15STIG_stigrule_234963__etc_audit_rules_d_audit_rules_b32_euid_execve_Line: '-a always,exit -F arch=b32 -S execve -C uid!=euid -F euid=0 -k setuid'
+sles15STIG_stigrule_234963__etc_audit_rules_d_audit_rules_b64_euid_execve_Line: '-a always,exit -F arch=b64 -S execve -C uid!=euid -F euid=0 -k setuid'
+sles15STIG_stigrule_234963__etc_audit_rules_d_audit_rules_b32_egid_execve_Line: '-a always,exit -F arch=b32 -S execve -C gid!=egid -F egid=0 -k setgid'
+sles15STIG_stigrule_234963__etc_audit_rules_d_audit_rules_b64_egid_execve_Line: '-a always,exit -F arch=b64 -S execve -C gid!=egid -F egid=0 -k setgid'
+# R-234964 SLES-15-030650
+sles15STIG_stigrule_234964_Manage: True
+sles15STIG_stigrule_234964_audit_State: installed
+# R-234966 SLES-15-030670
+sles15STIG_stigrule_234966_Manage: True
+sles15STIG_stigrule_234966_audit_audispd_plugins_State: installed
+sles15STIG_stigrule_234966__etc_audisp_plugins_d_au_remote_conf_Line: 'active = yes'
+# R-234967 SLES-15-030680
+sles15STIG_stigrule_234967_Manage: True
+sles15STIG_stigrule_234967__etc_audisp_audisp_remote_conf_Line: 'enable_krb5 = yes'
+# R-234968 SLES-15-030690
+# Ensure to set the IP address of the log aggregation server.
+sles15STIG_stigrule_234968_Manage: True
+sles15STIG_stigrule_234968__etc_audisp_audisp_remote_conf_Line: 'remote_server = 192.0.2.255'
+# R-234969 SLES-15-030700
+sles15STIG_stigrule_234969_Manage: False
+sles15STIG_stigrule_234969__etc_audit_auditd_conf_Line: 'space_left = 25'
+# R-234973 SLES-15-030740
+sles15STIG_stigrule_234973_Manage: True
+sles15STIG_stigrule_234973__etc_audit_rules_d_audit_rules_b32_unlink_Line: '-a always,exit -F arch=b32 -S unlink,unlinkat,rename,renameat,rmdir -F auid>=1000 -F auid!=4294967295 -k perm_mod'
+sles15STIG_stigrule_234973__etc_audit_rules_d_audit_rules_b64_unlink_Line: '-a always,exit -F arch=b64 -S unlink,unlinkat,rename,renameat,rmdir -F auid>=1000 -F auid!=4294967295 -k perm_mod'
+# R-234975 SLES-15-030760
+sles15STIG_stigrule_234975_Manage: True
+sles15STIG_stigrule_234975__etc_audit_rules_d_audit_rules_utmp_Line: '-w /run/utmp -p wa -k login_mod'
+# R-234976 SLES-15-030770
+sles15STIG_stigrule_234976_Manage: True
+sles15STIG_stigrule_234976__etc_audit_rules_d_audit_rules_wtmp_Line: '-w /var/log/wtmp -p wa -k login_mod'
+# R-234977 SLES-15-030780
+sles15STIG_stigrule_234977_Manage: True
+sles15STIG_stigrule_234977__etc_audit_rules_d_audit_rules_btmp_Line: '-w /var/log/btmp -p wa -k login_mod'
+# R-234978 SLES-15-030790
+sles15STIG_stigrule_234978_Manage: True
+sles15STIG_stigrule_234978__etc_audisp_audisp_remote_conf_Line: 'network_failure_action = syslog'
+# R-234979 SLES-15-030800
+sles15STIG_stigrule_234979_Manage: True
+sles15STIG_stigrule_234979__etc_audisp_audisp_remote_conf_Line: 'disk_full_action = syslog'
+# R-234982 SLES-15-040000
+sles15STIG_stigrule_234982_Manage: True
+sles15STIG_stigrule_234982__etc_login_defs_Line: 'FAIL_DELAY 4'
+# R-234990 SLES-15-040062
+sles15STIG_stigrule_234990_Manage: True
+sles15STIG_stigrule_234990__etc_systemd_system_conf_Value: 'none'
+# R-235003 SLES-15-040190
+# If kernel core dumps are required, document the need with the ISSO.
+sles15STIG_stigrule_235003_Manage: True
+sles15STIG_stigrule_235003_kdump_disable_Enabled: no
+# R-235007 SLES-15-040230
+sles15STIG_stigrule_235007_Manage: True
+sles15STIG_stigrule_235007_IgnoreUserKnownHosts_Line: IgnoreUserKnownHosts yes
+# R-235010 SLES-15-040260
+sles15STIG_stigrule_235010_Manage: True
+sles15STIG_stigrule_235010_StrictModes_Line: StrictModes yes
+# R-235013 SLES-15-040290
+sles15STIG_stigrule_235013_Manage: True
+sles15STIG_stigrule_235013_X11Forwarding_Line: X11Forwarding no
+# R-235014 SLES-15-040300
+sles15STIG_stigrule_235014_Manage: True
+sles15STIG_stigrule_235014_net_ipv4_conf_all_accept_source_route_Value: 0
+# R-235015 SLES-15-040310
+sles15STIG_stigrule_235015_Manage: True
+sles15STIG_stigrule_235015_net_ipv6_conf_all_accept_source_route_Value: 0
+# R-235016 SLES-15-040320
+sles15STIG_stigrule_235016_Manage: True
+sles15STIG_stigrule_235016_net_ipv4_conf_default_accept_source_route_Value: 0
+# R-235017 SLES-15-040321
+sles15STIG_stigrule_235017_Manage: True
+sles15STIG_stigrule_235017_net_ipv6_conf_default_accept_source_route_Value: 0
+# R-235018 SLES-15-040330
+sles15STIG_stigrule_235018_Manage: True
+sles15STIG_stigrule_235018_net_ipv4_conf_all_accept_redirects_Value: 0
+# R-235019 SLES-15-040340
+sles15STIG_stigrule_235019_Manage: True
+sles15STIG_stigrule_235019_net_ipv4_conf_default_accept_redirects_Value: 0
+# R-235020 SLES-15-040341
+sles15STIG_stigrule_235020_Manage: True
+sles15STIG_stigrule_235020_net_ipv6_conf_all_accept_redirects_Value: 0
+# R-235021 SLES-15-040350
+sles15STIG_stigrule_235021_Manage: True
+sles15STIG_stigrule_235021_net_ipv6_conf_default_accept_redirects_Value: 0
+# R-235022 SLES-15-040360
+sles15STIG_stigrule_235022_Manage: True
+sles15STIG_stigrule_235022_net_ipv4_conf_default_send_redirects_Value: 0
+# R-235023 SLES-15-040370
+sles15STIG_stigrule_235023_Manage: True
+sles15STIG_stigrule_235023_net_ipv4_conf_all_send_redirects_Value: 0
+# R-235024 SLES-15-040380
+sles15STIG_stigrule_235024_Manage: True
+sles15STIG_stigrule_235024_net_ipv4_ip_forward_Value: 0
+# R-235025 SLES-15-040381
+sles15STIG_stigrule_235025_Manage: True
+sles15STIG_stigrule_235025_net_ipv6_conf_all_forwarding_Value: 0
+# R-235026 SLES-15-040382
+sles15STIG_stigrule_235026_Manage: True
+sles15STIG_stigrule_235026_net_ipv6_conf_default_forwarding_Value: 0
+# R-235030 SLES-15-040420
+sles15STIG_stigrule_235030_Manage: True
+sles15STIG_stigrule_235030__etc_login_defs_Line: 'UMASK 077'
+# R-235031 SLES-15-040430
+sles15STIG_stigrule_235031_Manage: True
+sles15STIG_stigrule_235031__etc_sysconfig_displaymanager_AUTOLOGIN_Line: 'DISPLAYMANAGER_AUTOLOGIN=""'
+sles15STIG_stigrule_235031__etc_sysconfig_displaymanager_LESS_LOGIN_Line: 'DISPLAYMANAGER_PASSWORD_LESS_LOGIN="no"'
+# R-235032 SLES-15-040440
+sles15STIG_stigrule_235032_Manage: True
+sles15STIG_stigrule_235032_PermitEmptyPasswords_Line: PermitEmptyPasswords no
+sles15STIG_stigrule_235032_PermitUserEnvironment_Line: PermitUserEnvironment no
+# R-256983 SLES-15-010418
+sles15STIG_stigrule_256983_Manage: True
+sles15STIG_stigrule_256983_mailx_State: installed
