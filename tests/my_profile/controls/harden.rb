@@ -6,7 +6,7 @@ control "SRG-OS-000480-GPOS-00227" do
   desc "The SUSE operating system must be a vendor-supported release. An unsupported release will not receive security updates, making it vulnerable to security issues."
 
   describe file('/etc/os-release') do
-    its('content') { should match /NAME="SLES"/ }
+    its('content') { should match /NAME="openSUSE Leap"/ }
     its('content') { should match /VERSION="15"/ }
     its('content') { should_not match /VERSION="15-SP([0-9]+)"/ }
   end
