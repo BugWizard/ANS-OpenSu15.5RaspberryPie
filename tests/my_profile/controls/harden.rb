@@ -8,7 +8,6 @@ control "SRG-OS-000480-GPOS-00227" do
   describe file('/etc/os-release') do
     its('content') { should match /NAME="openSUSE Leap"/ }
     its('content') { should match /VERSION="15.4"/ }
-    its('content') { should_not match /VERSION="15.4"/ }
   end
 
   describe command('date +%Y%m%d') do
