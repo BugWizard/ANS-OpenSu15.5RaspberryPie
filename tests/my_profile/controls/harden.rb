@@ -26,17 +26,12 @@ control "SRG-OS-000480-GPOS-00227" do
   end
 end
 
-# Check for implementation of Endpoint Security for Linux Threat Prevention tool
-# control "SRG-OS-000480-GPOS-00228" do
-#   impact 1.0
-#   title "Check if the SUSE operating system has implemented the Endpoint Security for Linux Threat Prevention tool."
-#   desc "The SUSE operating system must implement the Endpoint Security for Linux Threat Prevention tool. This tool can automatically take actions in response to malicious behavior, providing additional agility in reacting to network threats."
+control 'SRG-OS-000074-GPOS-00042' do
+  impact 1.0
+  title 'The SUSE operating system must not have the vsftpd package installed if not required for operational support.'
+  desc 'Verify the vsftpd package is not installed on the SUSE operating system.'
 
-#   describe command('zypper se -i -t package mcafeetp') do
-#     its('stdout') { should match /i\+ | mcafeetp/ }
-#   end
-
-#   describe processes('mfetpd') do 
-#     it { should exist }
-#   end
-# end
+  describe package('vsftpd') do
+    it { should_not be_installed }
+  end
+end
