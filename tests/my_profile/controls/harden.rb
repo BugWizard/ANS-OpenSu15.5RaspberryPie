@@ -43,7 +43,7 @@ control 'SRG-OS-000029-GPOS-00010' do
 
   describe file('/etc/profile.d/autologout.sh') do
     it { should exist }
-    its('mode') { should cmp '0755' } #Kollar att filen har read,write och exec för ägaren samt read och execute för group och andra
+    its('mode') { should cmp '0755' } #Kollar att filen har read,write och exec för ägaren samt read och execute för group och andra (0755)
     its('content') { should include 'TMOUT=900' }
     its('content') { should include 'readonly TMOUT' }
     its('content') { should include 'export TMOUT' }

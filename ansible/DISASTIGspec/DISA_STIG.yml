@@ -1,18 +1,20 @@
 ---
-- hosts: 192.168.1.15
-
-  tasks:
-    ---
-- name: Ensure vsftpd is not installed
-  hosts: your_opensuse_host
+- name: Ensure session lock after 15-minute inactivity
+  hosts: your_suse_host
   become: yes
 
   tasks:
-    - name: Check if vsftpd is installed
-      command: zypper info vsftpd | grep Installed
-      register: vsftpd_installed
-      ignore_errors: true
+    - name: Create /etc/profile.d/autologout.sh if it doesn't exist
+      file:
+        path: /etc/profile.d/autologout.sh
+        state: touch
+        mode: '0755'
 
-    - name: Remove vsftpd
-      command: zypper remove -y vsftpd
-      when: "'Installed:' in vsftpd_installed.stdout"
+    - name: Ensure correct content in /etc/profile.d/autologout.sh
+      blockinfile:
+        path: /etc/profile.d/autologout.sh
+        create: yes
+        block: |
+          TMOUT=900
+          readonly TMOUT
+          export TMOUT
