@@ -1,14 +1,20 @@
 ---
 - name: Ensure session lock after 15-minute inactivity
-  hosts: your_suse_host
+  hosts: [OpenSUSE]
   become: yes
 
   tasks:
+    - name: Check if /etc/profile.d/autologout.sh exists
+      stat:
+        path: /etc/profile.d/autologout.sh
+      register: file_stat
+
     - name: Create /etc/profile.d/autologout.sh if it doesn't exist
       file:
         path: /etc/profile.d/autologout.sh
         state: touch
         mode: '0755'
+      when: not file_stat.stat.exists
 
     - name: Ensure correct content in /etc/profile.d/autologout.sh
       blockinfile:

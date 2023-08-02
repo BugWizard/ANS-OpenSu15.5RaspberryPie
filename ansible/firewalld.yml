@@ -1,6 +1,6 @@
 ---
 - hosts: 192.168.1.15
-  tasks:
+  task:
     - name: Install firewalld
       zypper:
         name: firewalld
@@ -34,4 +34,5 @@
     selinux:
         policy: targeted
         state: enforcing
-  ...
+
+...
