@@ -36,3 +36,16 @@ control 'SRG-OS-000074-GPOS-00042' do
   end
 end
 
+control 'SRG-OS-000029-GPOS-00010' do
+  impact 1.0
+  title 'The SUSE operating system must initiate a session lock after a 15-minute period of inactivity.'
+  desc 'Verify the SUSE operating system must initiate a session logout after a 15-minute period of inactivity for all connection types.'
+
+  describe file('/etc/profile.d/autologout.sh') do
+    it { should exist }
+    its('mode') { should cmp '0755' } #Kollar att filen har read,write och exec för ägaren samt read och execute för group och andra
+    its('content') { should include 'TMOUT=900' }
+    its('content') { should include 'readonly TMOUT' }
+    its('content') { should include 'export TMOUT' }
+  end
+end
