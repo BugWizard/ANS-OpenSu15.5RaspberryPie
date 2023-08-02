@@ -35,3 +35,4 @@ control 'SRG-OS-000074-GPOS-00042' do
     it { should_not be_installed }
   end
 end
+
