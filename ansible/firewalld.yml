@@ -14,27 +14,31 @@
         state: started
         enabled: yes
   
-  tasks:
-  - name: Ensure host firewalld service is enabled and running
-    service:
+    - name: Ensure host firewalld service is enabled and running
+      service:
         name: firewalld
         state: started
         enabled: yes
 
-  - name: Ensure SSH Protocol 2 is set
-    lineinfile:
+    - name: Ensure SSH Protocol 2 is set
+      lineinfile:
         path: /etc/ssh/sshd_config
         regexp: '^#?Protocol'
         line: 'Protocol 2'
+
+    - name: Install the libselinux-python package
+      community.general.zypper: 
+        name: python3-selinux
+        state: present
         
-  - name: Remove telnet-client
-    zypper:
+    - name: Remove telnet-client
+      zypper:
         name: telnet
         state: absent
 
-  - name: Set SELinux to enforcing mode
-    selinux:
-        policy: targeted
+    - name: Enforcing SELinux
+      ansible.posix.selinux:
         state: enforcing
+        policy: targeted
 
 ...
