@@ -1,6 +1,8 @@
 ---
-- hosts: 192.168.1.15
-  task:
+- name: firewalld configuration
+  hosts: [OpenSUSE]
+
+  tasks:
     - name: Install firewalld
       zypper:
         name: firewalld
