@@ -1,7 +1,7 @@
 ---
 - name: Network Getting Started First Playbook
   gather_facts: true
-  hosts: 192.168.1.15
+  hosts: [OpenSUSE]
   tasks:
     - name: Gather facts for OpenSUSE
       ansible.builtin.setup:
