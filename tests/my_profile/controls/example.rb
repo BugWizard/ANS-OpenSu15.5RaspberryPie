@@ -1,18 +1,21 @@
-# copyright: 2018, The Authors
-
-title "sample section"
-
-# you can also use plain tests
-describe file("/tmp") do
-  it { should be_directory }
+control 'check-selinux' do
+  impact 1.0
+  title 'Check if SELinux is in enforcing mode'
+  desc 'SELinux should be in enforcing mode'
+  
+  describe command('getenforce') do
+    its('stdout.strip') { should cmp 'Enforcing' }
+  end
 end
 
-# you add controls here
-control "tmp-1.0" do                        # A unique ID for this control
-  impact 0.7                                # The criticality, if this control fails.
-  title "Create /tmp directory"             # A human-readable title
-  desc "An optional description..."
-  describe file("/tmp") do                  # The actual test
-    it { should be_directory }
+
+control 'check-selinux-config' do
+  impact 1.0
+  title 'Check SELinux configuration'
+  desc 'SELinux should be in enforcing mode'
+
+  describe file('/etc/selinux/config') do
+    its('content') { should match /SELINUX=enforcing/ }
+    its('content') { should match /SELINUXTYPE=targeted/ }
   end
 end

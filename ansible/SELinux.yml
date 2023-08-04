@@ -1,12 +1,11 @@
 - name: Enforcing SELinux
-  hosts: OpenSUSE
-  become: yes
-
+  hosts: 192.168.1.90
   tasks:
     - name: Enforce SELinux
       ansible.posix.selinux:
         state: enforcing
         policy: targeted
+      enabled: yes
 
     - name: Reboot the machine
       ansible.builtin.reboot:
