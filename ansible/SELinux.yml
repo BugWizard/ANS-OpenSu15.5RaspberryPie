@@ -1,14 +1,12 @@
 - name: Enforcing SELinux
-  hosts: [OpenSUSE]
+  hosts: OpenSUSE
   become: yes
-  
+
   tasks:
     - name: Enforce SELinux
       ansible.posix.selinux:
         state: enforcing
         policy: targeted
-      register: selinux_status
 
     - name: Reboot the machine
       ansible.builtin.reboot:
-      when: selinux_status is changed
