@@ -1,5 +1,5 @@
 - name: Enforcing SELinux
-  hosts: 192.168.1.90
+  hosts: [OpenSUSE]
   tasks:
     - name: Enforce SELinux
       ansible.posix.selinux:

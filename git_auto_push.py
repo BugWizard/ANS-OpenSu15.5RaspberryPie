@@ -4,7 +4,7 @@ from git import Repo, Actor
 import datetime
 
 
-def automatic_commit(repo_path, commit_message, author_name, author_email, skip_files=['git_auto_push.py''/venv']):
+def automatic_commit(repo_path, commit_message, author_name, author_email, skip_files=['git_auto_push.py']):
     repo = Repo(repo_path)
     author = Actor(author_name, author_email)
     committer = Actor(author_name, author_email)
