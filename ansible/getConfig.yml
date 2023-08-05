@@ -1,4 +1,12 @@
 ---
+##
+## Inhämtning av data och konfiguration av enheten finner du med detta script. Vill man istället se all fakta om maskinen kan man ersätta slutet med denna kod snippet.
+##
+##     - name: Display the facts
+##      debug:
+##        var: ansible_facts
+##
+
 - name: Network Getting Started First Playbook
   gather_facts: true
   hosts: [OpenSUSE]
@@ -13,6 +21,11 @@
           - interfaces
       register: ansible_facts
 
-    - name: Display the facts
+    - name: Set Python executable path as a variable
+      set_fact:
+        python_executable_path: "{{ ansible_facts['ansible_facts']['ansible_selinux']['status'] }}"
+
+    - name: Display the Python executable path
       debug:
-        var: ansible_facts
+        var: python_executable_path
+
