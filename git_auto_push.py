@@ -1,8 +1,10 @@
 import os
 import time
 from git import Repo, Actor
+import datetime
 
-def automatic_commit(repo_path, commit_message, author_name, author_email, skip_files=['git_auto_push.py']):
+
+def automatic_commit(repo_path, commit_message, author_name, author_email, skip_files=['git_auto_push.py''/venv']):
     repo = Repo(repo_path)
     author = Actor(author_name, author_email)
     committer = Actor(author_name, author_email)
@@ -24,7 +26,7 @@ def automatic_commit(repo_path, commit_message, author_name, author_email, skip_
             repo.index.commit(commit_message, author=author, committer=committer)
             origin = repo.remote(name='origin')  # Corrected remote name
             origin.push()
-            print("Changes committed and pushed successfully.")
+            print(datetime.datetime.now().strftime("%d-%b-%Y %H:%M:%S") + " - Changes committed and pushed successfully.")
         else:
             print("No changes to commit.")
     else:
@@ -35,9 +37,8 @@ def commit_every_30_minutes(repo_path, commit_message, author_name, author_email
         automatic_commit(repo_path, commit_message, author_name, author_email)
         time.sleep(1800)  # Sleep for 30 minutes (1800 seconds)
 
-# Example usage
-repo_path = "/home/user/Documents/Ansible_Leap_Project/ANS-OpenSu15.5RaspberryPie"
-commit_message = "Automatic commit save"
+repo_path = "/home/user/Documents/Ansible_Leap_Project/ANS-OpenSu15.5RaspberryPie" #sätt relevant parameter för din local repository
+commit_message = (datetime.datetime.now().strftime("%d-%b-%Y %H:%M:%S") + " - Automatic commit save")
 author_name = "Viktor Ohlsson"
 author_email = "viktoroh96@gmail.com"
 

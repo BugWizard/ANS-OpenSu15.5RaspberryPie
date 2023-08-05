@@ -35,10 +35,6 @@
       zypper:
         name: telnet
         state: absent
-
-    - name: Enforcing SELinux
-      ansible.posix.selinux:
-        state: enforcing
-        policy: targeted
-
+        
+        
 ...
