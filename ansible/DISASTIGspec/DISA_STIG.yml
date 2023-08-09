@@ -1,4 +1,9 @@
 ---
+# Ansible Task making sure the 15-minute inactivity is set to 900
+# Uses the /etc/profile.d directory which stores shell scripts that Exec when login to machine.
+
+# First control with vuln-ID: 234812
+
 - name: Ensure session lock after 15-minute inactivity
   hosts: [OpenSUSE]
   become: yes
@@ -24,3 +29,4 @@
           TMOUT=900
           readonly TMOUT
           export TMOUT
+
