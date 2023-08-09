@@ -1,11 +1,8 @@
-- name: Enforcing SELinux
+- name: Enable SELinux enforcing mode
   hosts: [OpenSUSE]
+  become: true
   tasks:
-    - name: Enforce SELinux
+    - name: Set SELinux to enforcing
       ansible.posix.selinux:
-        state: enforcing
         policy: targeted
-      enabled: yes
-
-    - name: Reboot the machine
-      ansible.builtin.reboot:
+        state: enforcing

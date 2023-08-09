@@ -1,3 +1,7 @@
+
+# My own InSpec control for SELinux config/etc
+# This control will check if SELinux is set to enforcing and not disabled.
+
 control 'check-selinux' do
   impact 1.0
   title 'Check if SELinux is in enforcing mode'
