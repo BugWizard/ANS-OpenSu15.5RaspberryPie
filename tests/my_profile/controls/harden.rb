@@ -4,7 +4,7 @@ puts "\n-------------------"
 puts "STIG Check running..."
 puts "-------------------\n"
 
-
+# This control makes sure that the STIG vuln-ID: 234800 is in full effect.
 control "SRG-OS-000480-GPOS-00227" do
   impact 1.0
   title "Check if the SUSE operating system is a vendor-supported release."
@@ -26,6 +26,7 @@ control "SRG-OS-000480-GPOS-00227" do
   end
 end
 
+# This control makes sure that the STIG vuln-ID: 234804 is in full effect.
 control 'SRG-OS-000074-GPOS-00042' do
   impact 1.0
   title 'The SUSE operating system must not have the vsftpd package installed if not required for operational support.'
@@ -36,6 +37,7 @@ control 'SRG-OS-000074-GPOS-00042' do
   end
 end
 
+# This control makes sure that the STIG vuln-ID: 234812 is in full effect.
 control 'SRG-OS-000029-GPOS-00010' do
   impact 1.0
   title 'The SUSE operating system must initiate a session lock after a 15-minute period of inactivity.'
