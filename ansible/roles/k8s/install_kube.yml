@@ -1,34 +1,29 @@
 ---
-- name: Install kubectl and set PATH
-  hosts: 192.168.1.9
+- name: Install kubectl on OpenSUSE Leap 15
+  hosts: OpenSUSE
   become: true
-  vars:
-    kubectl_version: 1.22.2
-    kubectl_install_dir: /usr/local/bin
-
   tasks:
-    - name: Install required packages
+
+    - name: Install curl
       zypper:
-        name: "{{ item }}"
+        name: curl
         state: present
-      loop:
-        - curl
-        - tar
 
     - name: Download kubectl binary
       get_url:
-        url: "https://storage.googleapis.com/kubernetes-release/release/v{{ kubectl_version }}/bin/linux/amd64/kubectl"
-        dest: "{{ kubectl_install_dir }}/kubectl"
+        url: "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+        dest: /usr/local/bin/kubectl
         mode: '0755'
 
-    - name: Add kubectl to PATH
-      lineinfile:
-        path: /etc/profile
-        line: 'export PATH="{{ kubectl_install_dir }}:$PATH"'
-        state: present
-        create: yes
+    - name: Make kubectl binary executable
+      file:
+        path: /usr/local/bin/kubectl
+        mode: '0755'
 
-    - name: Reload profile
-      command: source /etc/profile
-      args:
-        executable: /bin/bash
+    - name: Verify kubectl version
+      command: kubectl version --client
+      register: result
+
+    - name: Show kubectl version
+      debug:
+        var: result.stdout_lines
