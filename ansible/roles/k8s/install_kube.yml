@@ -1,0 +1,34 @@
+---
+- name: Install kubectl and set PATH
+  hosts: 192.168.1.9
+  become: true
+  vars:
+    kubectl_version: 1.22.2
+    kubectl_install_dir: /usr/local/bin
+
+  tasks:
+    - name: Install required packages
+      zypper:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - curl
+        - tar
+
+    - name: Download kubectl binary
+      get_url:
+        url: "https://storage.googleapis.com/kubernetes-release/release/v{{ kubectl_version }}/bin/linux/amd64/kubectl"
+        dest: "{{ kubectl_install_dir }}/kubectl"
+        mode: '0755'
+
+    - name: Add kubectl to PATH
+      lineinfile:
+        path: /etc/profile
+        line: 'export PATH="{{ kubectl_install_dir }}:$PATH"'
+        state: present
+        create: yes
+
+    - name: Reload profile
+      command: source /etc/profile
+      args:
+        executable: /bin/bash

@@ -1,0 +1,18 @@
+- name: Download RKE2 binary
+  get_url:
+    url: https://github.com/rancher/rke2/releases/download/v1.24.1%2Brke2r2/rke2.linux-amd64.tar.gz
+    dest: /usr/local/bin/rke2
+    mode: '0755'
+
+- name: Create RKE2 service
+  copy:
+    src: /usr/local/bin/rke2
+    dest: /etc/systemd/system/rke2.service
+    mode: '0644'
+
+- name: Enable and start RKE2 service
+  systemd:
+    name: rke2
+    enabled: yes
+    state: started
+
