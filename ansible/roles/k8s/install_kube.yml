@@ -3,22 +3,20 @@
   hosts: OpenSUSE
   become: true
   tasks:
+    - name: Remove existing Kubernetes repository (if exists)
+      command: zypper rr kubernetes
+      ignore_errors: yes
 
-    - name: Install curl
+    - name: Add Kubernetes repository
+      command: zypper ar -f https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64 kubernetes
+
+    - name: Refresh all zypper repositories
+      command: zypper refresh
+
+    - name: Install kubectl
       zypper:
-        name: curl
+        name: kubectl
         state: present
-
-    - name: Download kubectl binary
-      get_url:
-        url: "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
-        dest: /usr/local/bin/kubectl
-        mode: '0755'
-
-    - name: Make kubectl binary executable
-      file:
-        path: /usr/local/bin/kubectl
-        mode: '0755'
 
     - name: Verify kubectl version
       command: kubectl version --client
