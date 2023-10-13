@@ -10,10 +10,10 @@ def automatic_commit(repo_path, commit_message, author_name, author_email, skip_
     committer = Actor(author_name, author_email)
 
     if repo.is_dirty():
-        # Get a list of all file paths in the repo
+        # Get a tuple of all file paths in the repo
         all_files = [os.path.join(root, file) for root, _, files in os.walk(repo_path) for file in files]
 
-        # Filter out the files in the skip_files list
+        # Filter for files that shall be skipped
         files_to_add = [file for file in all_files if os.path.basename(file) not in skip_files]
 
         # Add the remaining files to the repo
@@ -38,7 +38,7 @@ def commit_every_30_minutes(repo_path, commit_message, author_name, author_email
         time.sleep(1800)  # Sleep for 30 minutes (1800 seconds)
 
 repo_path = "/home/user/Documents/Ansible_Leap_Project/ANS-OpenSu15.5RaspberryPie" #sätt relevant parameter för din local repository
-commit_message = (datetime.datetime.now().strftime("%d-%b-%Y %H:%M:%S") + " - Automatic commit save")
+commit_message = (datetime.datetime.now().strftime("%d-%b-%Y %H:%M:%S") + " - Automatic commit save") # Exakt tid då den kraftknuffar till GitHub samt ett standard commit meddelande
 author_name = "Viktor Ohlsson"
 author_email = "viktoroh96@gmail.com"
 

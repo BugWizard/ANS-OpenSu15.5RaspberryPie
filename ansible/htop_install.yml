@@ -1,8 +1,0 @@
-- hosts: [OpenSUSE]
-  become: true
-  tasks:
-    - name: Install Htop
-      zypper:
-        name: htop
-        state: latest
-

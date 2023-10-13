@@ -11,7 +11,7 @@
       command: zypper ar -f https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64 kubernetes
 
     - name: Refresh all zypper repositories
-      command: zypper refresh
+      command: zypper --non-interactive refresh
 
     - name: Install kubectl
       zypper:
